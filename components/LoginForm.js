@@ -47,4 +47,10 @@ const Button = styled.button`
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
+  &:hover {
+    background-color: #fff;
+    color: #6a0dad;
+    transition: 0.3s all ease-in;
+    border: 1px solid #6a0dad;
+  }
 `;
