@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUser } from '../redux/slice';
 import styled from "styled-components";
 
 function Profile() {
-  const [user, setUser] = useState("");
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+
+  const handleLogout = () => {
+      e.preventDefault();
+      dispatch(logout());
+  }
 
   return (
-    <>
+    <>  
       <Wrapper>
-        <Text>Welcome {user}</Text>
+        <Text>Welcome {user.name} </Text>
         <Container>
-          <Button as="a" href="/">
+          <Button as="a" href="/" onClick={(e) => handleLogout(e)}>
             Logout 
           </Button> 
-          <AnotherButton as="a" href="/">
+          <AnotherButton as="a" href="/" onClick={(e) => handleLogout(e)}>
             Sign In 
           </AnotherButton>
         </Container> 

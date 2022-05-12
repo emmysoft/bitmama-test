@@ -1,30 +1,32 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/slice";
 import styled from "styled-components";
 
-function LoginForm({ Login, error }) {
-  const [username ,setUserName] = useState("");
-  const [details, setDetails] = useState({ username: "" });
+function LoginForm() {
+  const [name ,setName] = useState(""); 
+  const dispatch = useDispatch();
 
-  const submitHandler = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    Login(details);
+    dispatch(login({ 
+      name: name, 
+      loggedIn: true 
+    })
+    )
   };
-
-  // const Logout = () => {
-  //   console.log(Logout)
-  // }
 
   return (
     <>
-      <Wrapper onSubmit={submitHandler}>
-        <Input
-          type="text"
+      <Wrapper>
+        <Input 
+          type="name"
           placeholder="enter your username"
-          onChange={(e) => setDetails({ ...details, username: e.target.value })}
-          value={username}
+          onChange={(e) => setName(e.target.value)}
+          value={name}
           required
         />
-        <Button as="a" href="/profile">
+        <Button as="a" href="/profile" onClick={handleSubmit}>
           Login
         </Button>
       </Wrapper>
