@@ -35,10 +35,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 4em;
+  margin-left: 20em;
+  margin-top: 8em;
   background-color: #fff;
-  width: 80%;
-  height: 40vh;  
+  width: 50%;
+  height: 60vh;  
   box-shadow: 2px 4px 2px 4px rgb(220, 184, 255);  
   border-radius: 12px 8px;
   border: 3px solid #fff;
