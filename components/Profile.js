@@ -54,7 +54,7 @@ const Text = styled.p`
 `;
 
 const Button = styled.button`
-  color: #fff;
+  color: #fff; 
   text-decoration: none;
   background-color: #6a0dad;  
   padding: 1rem;
